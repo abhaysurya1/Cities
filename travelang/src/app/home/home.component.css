@@ -1,0 +1,84 @@
+/* Home Container Styles */
+.home-container {
+  text-align: center;
+  padding: 40px; /* Increased padding for better spacing */
+  background: linear-gradient(135deg, #f0f4f8, #e2e8f0); /* Subtle gradient background */
+  border-radius: 15px; /* Rounding the edges */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+/* Main Heading Styles */
+h1 {
+  font-size: 2.8rem; /* Slightly larger font size */
+  margin-bottom: 15px; /* Increased bottom margin */
+  color: #2c3e50; /* Darker text color for better contrast */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
+/* Paragraph Styles */
+p {
+  font-size: 1.3rem; /* Increased font size for readability */
+  margin-bottom: 25px; /* More space below paragraphs */
+  line-height: 1.6; /* Improved line spacing */
+  color: #34495e; /* Darker shade for text */
+}
+
+/* Card Container Styles */
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 20px; /* Space above card container */
+}
+
+/* Card Styles */
+.card {
+  background: white; /* Keeping card background white for contrast */
+  border-radius: 15px; /* Increased border radius */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Softer shadow */
+  margin: 15px; /* Increased margin for spacing */
+  padding: 20px;
+  width: 300px; /* Fixed width */
+  transition: transform 0.3s, box-shadow 0.3s; /* Transition for shadow effect */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+/* Card Title Styles */
+h2 {
+  font-size: 1.7rem; /* Increased font size for card titles */
+  margin-bottom: 10px; /* Spacing below titles */
+  color: #2980b9; /* Change card title color for emphasis */
+}
+
+/* Button Styles */
+.explore-button {
+  background: linear-gradient(90deg, #007bff, #0056b3); /* Gradient background for buttons */
+  color: white; /* White text for contrast */
+  border: none;
+  border-radius: 8px; /* Rounded corners */
+  padding: 12px 24px; /* Increased padding for better touch targets */
+  cursor: pointer;
+  font-size: 1.1rem; /* Larger font size for buttons */
+  transition: background 0.3s, transform 0.2s; /* Transition for hover effects */
+}
+
+.explore-button:hover {
+  background: linear-gradient(90deg, #0056b3, #007bff); /* Reverse gradient on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column; /* Stack cards on smaller screens */
+    align-items: center; /* Center alignment */
+  }
+
+  .card {
+    width: 90%; /* Full width on small screens */
+  }
+}

@@ -1,0 +1,13 @@
+<div class="card mt-4">
+  <div class="card-body">
+    <h5 class="card-title">City Details - ID: {{ cityId }}</h5>
+    <p class="card-text"><strong>Description:</strong> {{ cityDescription }}</p>
+    <p class="card-text"><strong>Places to See:</strong></p>
+    <ul>
+      <li *ngFor="let place of cityPlacesToSee">{{ place }}</li>
+    </ul>
+    <p class="card-text"><strong>Rating:</strong> {{ cityRating }} ★</p>
+    <button class="btn btn-warning" (click)="goBack()">Go Back to Cities</button>
+    <button class="btn btn-primary" (click)="goHome()">Go Home</button>
+  </div>
+</div>

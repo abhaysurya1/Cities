@@ -1,0 +1,92 @@
+<div class="container mt-4">
+  <h2 class="text-center mb-4">Cities Management</h2>
+
+  <!-- Search Functionality -->
+  <div class="row mb-4">
+    <div class="col-md-4 offset-md-4">
+      <div class="input-group">
+        <input type="text" [(ngModel)]="searchTerm" (input)="filterCities()" class="form-control" placeholder="Search Cities..." />
+        <button class="btn btn-primary" (click)="filterCities()">Search</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cities List -->
+  <div class="row">
+    <div class="col-md-4" *ngFor="let city of filteredCities">
+      <div class="card mb-3">
+        <img [src]="city.image" class="card-img-top" alt="{{ city.description }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ city.description }}</h5>
+          <p class="card-text">
+            <strong>Rating:</strong> 
+            <ng-container *ngFor="let star of getStars(city.rating); let i = index">
+              <span 
+                class="star" 
+                [ngClass]="{'filled': i < city.rating}" 
+                (click)="setRating(city, i + 1)"
+                >&#9733;</span>
+            </ng-container><br>
+            <strong>Places to See:</strong> {{ city.placesToSee.join(', ') }}
+          </p>
+          <button class="btn btn-primary" (click)="showCityDetails(city.id)">Edit</button>
+          <button class="btn btn-danger" (click)="deleteCity(city.id)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add New City Form -->
+  <h3 class="text-center mt-4">Add New City</h3>
+  <form (ngSubmit)="addCity()" class="mb-4">
+    <div class="row">
+      <div class="col-md-3">
+        <input [(ngModel)]="newCity.description" placeholder="Description" name="description" required class="form-control" />
+      </div>
+      <div class="col-md-2">
+        <input [(ngModel)]="newCity.rating" type="number" placeholder="Rating" name="rating" min="1" max="5" required class="form-control" />
+      </div>
+      <div class="col-md-3">
+        <input [(ngModel)]="newCity.image" placeholder="Image URL" name="image" required class="form-control" />
+      </div>
+      <div class="col-md-2">
+        <select [(ngModel)]="newCity.type" name="type" required class="form-control">
+          <option value="Cultural">Cultural</option>
+          <option value="Nature">Nature</option>
+          <option value="Adventure">Adventure</option>
+          <option value="Family">Family</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <button type="submit" class="btn btn-success">Add City</button>
+      </div>
+    </div>
+  </form>
+
+  <!-- Update City Form -->
+  <h3 *ngIf="selectedCity" class="text-center mt-4">Update City</h3>
+  <form *ngIf="selectedCity" (ngSubmit)="updateCity()" class="mb-4">
+    <div class="row">
+      <div class="col-md-3">
+        <input [(ngModel)]="selectedCity.description" placeholder="Description" name="updateDescription" required class="form-control" />
+      </div>
+      <div class="col-md-2">
+        <input [(ngModel)]="selectedCity.rating" type="number" placeholder="Rating" name="updateRating" min="1" max="5" required class="form-control" />
+      </div>
+      <div class="col-md-3">
+        <input [(ngModel)]="selectedCity.image" placeholder="Image URL" name="updateImage" required class="form-control" />
+      </div>
+      <div class="col-md-2">
+        <select [(ngModel)]="selectedCity.type" name="updateType" required class="form-control">
+          <option value="Cultural">Cultural</option>
+          <option value="Nature">Nature</option>
+          <option value="Adventure">Adventure</option>
+          <option value="Family">Family</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <button type="submit" class="btn btn-warning">Update City</button>
+      </div>
+    </div>
+  </form>
+</div>

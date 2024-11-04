@@ -1,0 +1,22 @@
+<!-- <div class="star-rating">
+    <ng-container *ngFor="let star of getStars(); let i = index">
+      <span class="star" [ngClass]="{'filled': star.filled, 'partially-filled': star.partial > 0}" [style.width]="star.partial ? star.partial + '%' : '100%'">
+        ★
+      </span>
+    </ng-container>
+    <span class="text-rating">({{ getTextualRating() }})</span> 
+  </div> -->
+
+  <div class="stars">
+  <i
+    *ngFor="let filled of getStars(); index as i"
+    class="star-icon"
+    [ngClass]="{ 'filled': filled }"
+    (click)="onStarClick(i)"
+  >
+    ★ 
+  </i>
+</div>
+<span class="textual-rating">{{ getTextualRating() }}</span>
+
+  

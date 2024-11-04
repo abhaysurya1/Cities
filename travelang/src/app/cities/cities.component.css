@@ -1,0 +1,36 @@
+.star {
+  color: lightgray;  
+  font-size: 20px;   
+  cursor: pointer;    
+}
+
+.star.filled {
+  color: gold;  
+}
+
+.card {
+  transition: transform 0.2s;  
+}
+
+.card:hover {
+  transform: scale(1.05); 
+}
+
+.container {
+  margin-top: 20px;
+}
+
+h2, h3 {
+  margin-bottom: 20px;
+}
+
+.star {
+  cursor: pointer;
+  color: gray;
+}
+
+.star.filled {
+  color: gold;
+}
+
+

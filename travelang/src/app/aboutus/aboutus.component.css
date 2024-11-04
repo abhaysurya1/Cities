@@ -1,0 +1,79 @@
+/* About Us Container */
+.about-us-container {
+    padding: 30px; /* Increased padding for a more spacious layout */
+    background-color: #ffffff; /* Keeping a clean background */
+    border-radius: 15px; /* Increased border radius for softer corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow for depth */
+    max-width: 900px; /* Wider container */
+    margin: 40px auto; /* Added top margin for separation */
+}
+
+/* Quote Section */
+.quote-section {
+    font-style: italic; /* Italics for emphasis */
+    margin: 30px 0; /* Increased vertical spacing */
+    text-align: center; /* Centered text */
+    border-left: 4px solid #007bff; /* Blue accent line */
+    padding-left: 15px; /* More padding for better aesthetics */
+    color: #555; /* Softer text color */
+}
+
+/* Services Section */
+.services {
+    display: flex;
+    justify-content: space-around; /* More spacing around the services */
+    margin-top: 30px; /* Increased margin for separation */
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+/* Individual Service Block */
+.service {
+    flex: 1 1 30%; /* Flexible basis with minimum width */
+    margin: 15px; /* Increased margin for spacing */
+    padding: 25px; /* More padding for larger touch area */
+    background-color: #f0f8ff; /* Soft background color */
+    border-radius: 12px; /* Rounded corners */
+    text-align: center; /* Centered text */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transition effects */
+    position: relative; /* For pseudo-elements */
+}
+
+/* Hover Effect for Service Block */
+.service:hover {
+    transform: translateY(-5px); /* Lift effect */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Darker shadow on hover */
+}
+
+/* Service Icon */
+.service-icon {
+    font-size: 60px; /* Increased icon size */
+    margin-bottom: 15px; /* More space below the icon */
+    color: #007bff; /* Accent color for icons */
+}
+
+/* Call to Action Section */
+.call-to-action {
+    text-align: center; /* Center alignment */
+    margin-top: 40px; /* Increased top margin for separation */
+}
+
+/* Call to Action Link */
+.call-to-action a {
+    color: #007bff; /* Primary color */
+    text-decoration: none; /* Remove underline for cleaner look */
+    font-weight: bold; /* Make the link bold */
+    transition: color 0.3s; /* Transition for color change */
+}
+
+.call-to-action a:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: #0056b3; /* Darker blue on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .service {
+        flex: 1 1 100%; /* Full width on small screens */
+        margin: 10px 0; /* Vertical spacing for stacked layout */
+    }
+}
